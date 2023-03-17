@@ -1,0 +1,18 @@
+name: run-postman
+
+on:
+  schedule:
+    - cron: '1 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run-postman:
+    name: Run Postman
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run postman collection
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
+          collection: postman_collection.json
