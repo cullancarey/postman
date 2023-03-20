@@ -10,7 +10,7 @@ jobs:
     name: Run Postman
     strategy:
       matrix:
-        os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
+        os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
     steps:
