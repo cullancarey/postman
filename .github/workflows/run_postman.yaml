@@ -8,17 +8,16 @@ on:
 jobs:
   run-postman:
     name: Run Postman
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        run-number: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
 
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout main
         uses: actions/checkout@main
 
       - name: Run postman collection
         uses: matt-ball/newman-action@master
-        run-number: ${{ matrix.run-number }}
         with:
           collection: dev.postman_collection.json
