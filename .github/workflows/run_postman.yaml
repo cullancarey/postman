@@ -11,8 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout main
+      - uses: actions/checkout@main
       - name: Run postman collection
-      - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
         with:
           collection: postman_collection.json
