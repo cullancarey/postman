@@ -1,6 +1,8 @@
 name: run-postman
 
 on:
+  schedule:
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,4 +20,4 @@ jobs:
       - name: Run postman collection
         uses: matt-ball/newman-action@master
         with:
-          collection: dev.postman_collection.json
+          collection: production.postman_collection.json
