@@ -1,0 +1,23 @@
+name: run-postman
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run-postman:
+    name: Run Postman
+    strategy:
+      matrix:
+        os: [ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest,ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@main
+
+      - name: Run postman collection
+        uses: matt-ball/newman-action@master
+        with:
+          collection: dev.postman_collection.json
