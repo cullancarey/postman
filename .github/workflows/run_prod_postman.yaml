@@ -1,4 +1,4 @@
-name: run-postman
+name: run-prod-postman
 
 on:
   schedule:
