@@ -2,7 +2,7 @@ name: run-postman
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 jobs:
